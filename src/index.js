@@ -129,7 +129,7 @@ class HourlyRate extends React.Component {
     render() {
         return (
             <div className = 'hourly-rate'>
-                <input type="number" name="hourly-rate" id="hourly-rate" onChange = {this.onInputChange} value={this.state.rate} size = "2" maxlength = "2"/>
+                <input type="number" name="hourly-rate" id="hourly-rate" onChange = {this.onInputChange} value={this.state.rate} size = "2" maxLength = "2"/>
             
                 <label htmlFor="hourly-rate"> per hour </label>
             </div>
@@ -162,7 +162,6 @@ class Calculator extends React.Component {
     
     SubtractDayHandleClick(i) {
         var input_list = this.state.input.slice();
-        var total = this.state.total;
         var rate = this.state.rate;
         input_list.pop();
         var total = this.getTotal(input_list,rate);
@@ -243,16 +242,17 @@ class Calculator extends React.Component {
             var toHour = +inputs[j].toHour;
             var toMinutes = +inputs[j].toMinute; 
 
-            if (inputs[j].fromPeriod === 'pm') {
-                fromHour = +fromHour + +12;
+            if (inputs[j].fromPeriod === 'pm' && fromHour > 12 ) {
+                fromHour = fromHour + 12;
             }
 
-            if (inputs[j].toPeriod === 'pm') {
+            if (inputs[j].toPeriod === 'pm' && toHour > 12) {
                 toHour = toHour + 12;
             }
 
             var hours = toHour - fromHour;
-            var minutes = Math.abs((toMinutes - fromMinutes)/60);
+            var minutes = (toMinutes - fromMinutes)/60;
+            console.log('minutes: ' + minutes);
             sub_total = (hours+minutes) * hourly_rate
            
             total = total + sub_total
