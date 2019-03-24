@@ -161,9 +161,15 @@ class Calculator extends React.Component {
     }
     
     SubtractDayHandleClick(i) {
-        const input_list = this.state.input.slice();
+        var input_list = this.state.input.slice();
+        var total = this.state.total;
+        var rate = this.state.rate;
         input_list.pop();
-        this.setState({input: input_list});
+        var total = this.getTotal(input_list,rate);
+        this.setState({
+            input: input_list,
+            total: total
+        });
         console.log(input_list);
     }
     
@@ -224,7 +230,6 @@ class Calculator extends React.Component {
             rate:rate,
             total:total
         });
-
     }
 
     getTotal(inputs, hourly_rate) {
