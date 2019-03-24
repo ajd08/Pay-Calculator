@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/AnthonyJordanDang/Pay-Calculator/precache-manifest.f7a4ffc2c250bb4717300231d1cf5866.js"
+  "/Pay-Calculator/precache-manifest.9813af4fba31a74754999ce2329aa27b.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/AnthonyJordanDang/Pay-Calculator/index.html", {
+workbox.routing.registerNavigationRoute("/Pay-Calculator/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
