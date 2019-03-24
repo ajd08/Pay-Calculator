@@ -88,7 +88,6 @@ class Input extends React.Component {
     }
 }
 
-
 class AddDay extends React.Component {
     render() {
 	return (
@@ -113,6 +112,31 @@ class SubtractDay extends React.Component {
     }
 }
 
+class HourlyRate extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            rate: 14,
+        };
+        this.onInputChange = this.onInputChange.bind(this)
+    }
+    onInputChange(event) {
+        const value = event.target.value;
+        this.props.onInputChange(value);
+        this.setState({rate: value});
+    }
+    
+    render() {
+        return (
+            <div className = 'hourly-rate'>
+                <input type="number" name="hourly-rate" id="hourly-rate" onChange = {this.onInputChange} value={this.state.rate} size = "2" maxlength = "2"/>
+            
+                <label htmlFor="hourly-rate"> per hour </label>
+            </div>
+        );
+    }
+}
+
 class Calculator extends React.Component {
     constructor(props) {
         super(props);
@@ -121,14 +145,16 @@ class Calculator extends React.Component {
             {id:0, fromHour:0, fromMinute:0, toHour:0, toMinute:0, fromPeriod:'am', toPeriod:'am'}
             ],
             total : 0,
+            rate: 14,
         }
         this.onInputChange = this.onInputChange.bind(this);
+        this.onHourlyRateChange = this.onHourlyRateChange.bind(this);
     }
     
     AddDayHandleClick(i) {
         const input_list = this.state.input.slice();
         const id = input_list.length;
-        const new_input = {id:id, fromHour:0, fromMinute:0, toHour:0, toMinute:0, fromPeriod:'am', toPeriod:'am'};
+        const new_input = {id:id, fromHour:0, fromMinute:0, toHour:0, toMinute:0, fromPeriod:'am', toPeriod:'am', rate:14};
         input_list.push(new_input);
         this.setState({input: input_list});
         console.log(input_list);
@@ -153,9 +179,14 @@ class Calculator extends React.Component {
         />;
       }
 
+    renderHourlyRateInput() {
+        return<HourlyRate onInputChange = {this.onHourlyRateChange}/> 
+    }
+
     onInputChange(id, name, value) {
         let inputs = [...this.state.input];
         let input = {...inputs[id]};
+        let rate = this.state.rate;
 
         if (name === 'from-hour') {
             input.fromHour = value;
@@ -176,13 +207,24 @@ class Calculator extends React.Component {
             input.toPeriod = value;
         }
         inputs[id] = input;
-        var total = this.getTotal(inputs, 14);
+        var total = this.getTotal(inputs, rate);
 
         this.setState({
             input: inputs,
             total: total
         });
                 
+    }
+
+    onHourlyRateChange(rate) {
+        var inputs = this.state.input;
+        var total = this.getTotal(inputs,rate);
+        console.log('Rate: ' + rate);
+        this.setState({
+            rate:rate,
+            total:total
+        });
+
     }
 
     getTotal(inputs, hourly_rate) {
@@ -206,7 +248,6 @@ class Calculator extends React.Component {
 
             var hours = toHour - fromHour;
             var minutes = Math.abs((toMinutes - fromMinutes)/60);
-            console.log(minutes);
             sub_total = (hours+minutes) * hourly_rate
            
             total = total + sub_total
@@ -225,11 +266,12 @@ class Calculator extends React.Component {
   render() {
     return (
       <div>
-        <div className="total">{this.state.total}</div>
-        <div className="addDay">
+        <div className="total">$ {this.state.total}</div>
+        <div className="toggle">
             {this.renderaddDayButton()} 
             {this.renderSubtractDayButton()} 
         </div>
+        {this.renderHourlyRateInput()}
         <div className="inputs">    
             {this.renderInput()} 
         </div>
