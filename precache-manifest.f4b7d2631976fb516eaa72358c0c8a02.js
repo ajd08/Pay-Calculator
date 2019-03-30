@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/Pay-Calculator/static/css/main.b870fec1.chunk.css"
   },
   {
-    "revision": "b7b52cd1875e039e7b77cea1f9d714b8",
+    "revision": "8f3e1a847a95996f4649dcc1e969b505",
     "url": "/Pay-Calculator/index.html"
   }
 ];

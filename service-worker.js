@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Pay-Calculator/precache-manifest.30e99df5d2758e59a53520fbd7a26602.js"
+  "/Pay-Calculator/precache-manifest.f4b7d2631976fb516eaa72358c0c8a02.js"
 );
 
 workbox.clientsClaim();
