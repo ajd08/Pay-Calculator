@@ -75,7 +75,7 @@ class InputRow extends React.Component {
                         name="from-hour"
                         min="1"
                         max="12"
-                        size="2"
+                        size="md"
                         maxLength="2"
                     />
                     <Input
@@ -86,7 +86,7 @@ class InputRow extends React.Component {
                         name="from-minute"
                         min="0"
                         max="59"
-                        size="2"
+                        size="sm"
                         maxLength="2"
                     />
             <Box size="lg" width="100px">
@@ -116,7 +116,7 @@ class InputRow extends React.Component {
                         name="to-hour"
                         min="1"
                         max="12"
-                        size="2"
+                        size="md"
                         maxLength="2"
                     />
                     <Input
@@ -127,7 +127,7 @@ class InputRow extends React.Component {
                         name="to-minute"
                         min="0"
                         max="59"
-                        size="2"
+                        size="md"
                         maxLength="2"
                     />
 
