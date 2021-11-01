@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://ajd08.github.io/Pay-Calculator",
+  "homepage": "http://ajd08.github.io/pay-calculator",
   "dependencies": {
     "@chakra-ui/react": "^1.6.10",
     "@emotion/react": "^11.5.0",
