@@ -5,6 +5,7 @@
   "homepage": "http://ajd08.github.io/Pay-Calculator",
   "dependencies": {
     "@chakra-ui/react": "^1.6.10",
+    "@chakra-ui/theme-tools": "^1.2.2",
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "framer-motion": "^4.1.17",

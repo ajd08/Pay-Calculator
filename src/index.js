@@ -15,6 +15,16 @@ import {
     Select,
 } from "@chakra-ui/react";
 
+import { createBreakpoints } from "@chakra-ui/theme-tools";
+
+const breakpoints = createBreakpoints({
+    sm: "320px",
+    md: "768px",
+    lg: "960px",
+    xl: "1200px",
+    "2xl": "1536px",
+});
+
 const theme = extendTheme({
     textStyles: {
         h1: {
@@ -24,6 +34,7 @@ const theme = extendTheme({
             letterSpacing: "-2%",
         },
     },
+    breakpoints,
 });
 
 class InputRow extends React.Component {
@@ -65,7 +76,7 @@ class InputRow extends React.Component {
         const id = this.props.id;
 
         return (
-            <HStack spacing="50" p={3}>
+            <HStack spacing="3em" p={3} justify="center" align="center">
                 <HStack>
                     <Input
                         id={id}
@@ -75,7 +86,7 @@ class InputRow extends React.Component {
                         name="from-hour"
                         min="1"
                         max="12"
-                        size="md"
+                        size="sm"
                         maxLength="2"
                     />
                     <Input
@@ -86,26 +97,23 @@ class InputRow extends React.Component {
                         name="from-minute"
                         min="0"
                         max="59"
-                        size="md"
+                        size="sm"
                         maxLength="2"
                     />
-                    <Box size="lg" width="100px">
+                    <Box size="md" width="3em">
                         <Select
                             id={id}
                             value={this.state.value}
                             onChange={this.onInputChange}
                             name="from-period"
                             width="5em"
-                            size="2"
+                            size="sm"
                         >
                             <option value="am"> A.M </option>
                             <option value="pm"> P.M </option>
                         </Select>
                     </Box>
                 </HStack>
-
-                <h3> to </h3>
-
                 <HStack>
                     <Input
                         id={id}
@@ -115,7 +123,7 @@ class InputRow extends React.Component {
                         name="to-hour"
                         min="1"
                         max="12"
-                        size="md"
+                        size="sm"
                         maxLength="2"
                     />
                     <Input
@@ -126,13 +134,13 @@ class InputRow extends React.Component {
                         name="to-minute"
                         min="0"
                         max="59"
-                        size="md"
+                        size="sm"
                         maxLength="2"
                     />
 
                     <Box size="lg" width="100px">
                         <Select
-                            size="2"
+                            size="sm"
                             width="5em"
                             id={id}
                             value={this.state.value}
@@ -194,7 +202,7 @@ class HourlyRate extends React.Component {
 
     render() {
         return (
-            <HStack>
+            <HStack pl="6em">
                 <Input
                     type="number"
                     name="hourly-rate"
@@ -348,23 +356,18 @@ class Calculator extends React.Component {
 
     render() {
         return (
-            <Box
-                display="flex"
-                pt="3em"
-                textAlign="center"
-                flexDirection="column"
-                alignItems="center"
-                width="100%"
-            >
+            <Box pt={8} textAlign="center" width="100%">
                 <Box textStyle="h1">$ {this.state.total}</Box>
 
-                <HStack spacing="24px" pt={4} pb={6}>
+                <HStack
+                    spacing="1em"
+                    pt={4}
+                    pb={6}
+                    align="center"
+                    justify="center"
+                >
                     {this.renderaddDayButton()}
                     {this.renderSubtractDayButton()}
-                    <Spacer />
-                    <Spacer />
-                    <Spacer />
-
                     {this.renderHourlyRateInput()}
                 </HStack>
 
