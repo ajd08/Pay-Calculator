@@ -86,23 +86,22 @@ class InputRow extends React.Component {
                         name="from-minute"
                         min="0"
                         max="59"
-                        size="sm"
+                        size="md"
                         maxLength="2"
                     />
-            <Box size="lg" width="100px">
-                    <Select
-                        size="md"
-                        id={id}
-                        value={this.state.value}
-                        onChange={this.onInputChange}
-                        name="from-period"
-                        width="5em"
-                    >
-                        <option value="am"> A.M </option>
-                        <option value="pm"> P.M </option>
-                    </Select>
-
-            </Box>
+                    <Box size="lg" width="100px">
+                        <Select
+                            id={id}
+                            value={this.state.value}
+                            onChange={this.onInputChange}
+                            name="from-period"
+                            width="5em"
+                            size="2"
+                        >
+                            <option value="am"> A.M </option>
+                            <option value="pm"> P.M </option>
+                        </Select>
+                    </Box>
                 </HStack>
 
                 <h3> to </h3>
@@ -131,19 +130,19 @@ class InputRow extends React.Component {
                         maxLength="2"
                     />
 
-            <Box size="lg" width="100px">
-                    <Select
-                        size="md"
-                        width="5em"
-                        id={id}
-                        value={this.state.value}
-                        onChange={this.onInputChange}
-                        name="to-period"
-                    >
-                        <option value="am"> A.M </option>
-                        <option value="pm"> P.M </option>
-                    </Select>
-            </Box>
+                    <Box size="lg" width="100px">
+                        <Select
+                            size="2"
+                            width="5em"
+                            id={id}
+                            value={this.state.value}
+                            onChange={this.onInputChange}
+                            name="to-period"
+                        >
+                            <option value="am"> A.M </option>
+                            <option value="pm"> P.M </option>
+                        </Select>
+                    </Box>
                 </HStack>
             </HStack>
         );
@@ -349,11 +348,12 @@ class Calculator extends React.Component {
 
     render() {
         return (
-            <Flex
-                align="center"
-                justify="center"
-                direction="column"
-                pt="2em"
+            <Box
+                display="flex"
+                pt="3em"
+                textAlign="center"
+                flexDirection="column"
+                alignItems="center"
                 width="100%"
             >
                 <Box textStyle="h1">$ {this.state.total}</Box>
@@ -369,7 +369,7 @@ class Calculator extends React.Component {
                 </HStack>
 
                 <div className="inputs">{this.renderInput()}</div>
-            </Flex>
+            </Box>
         );
     }
 }
