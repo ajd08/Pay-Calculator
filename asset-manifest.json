@@ -1,11 +1,11 @@
 {
-  "main.js": "/pay-calculator/static/js/main.3e5ea493.chunk.js",
-  "main.js.map": "/pay-calculator/static/js/main.3e5ea493.chunk.js.map",
-  "runtime~main.js": "/pay-calculator/static/js/runtime~main.246d0c30.js",
-  "runtime~main.js.map": "/pay-calculator/static/js/runtime~main.246d0c30.js.map",
-  "static/js/2.c8aa4025.chunk.js": "/pay-calculator/static/js/2.c8aa4025.chunk.js",
-  "static/js/2.c8aa4025.chunk.js.map": "/pay-calculator/static/js/2.c8aa4025.chunk.js.map",
-  "index.html": "/pay-calculator/index.html",
-  "precache-manifest.f6ca1bc8afc989085de38f5b525dccf9.js": "/pay-calculator/precache-manifest.f6ca1bc8afc989085de38f5b525dccf9.js",
-  "service-worker.js": "/pay-calculator/service-worker.js"
+  "main.js": "/Pay-Calculator/static/js/main.3e5ea493.chunk.js",
+  "main.js.map": "/Pay-Calculator/static/js/main.3e5ea493.chunk.js.map",
+  "runtime~main.js": "/Pay-Calculator/static/js/runtime~main.a85f4b7c.js",
+  "runtime~main.js.map": "/Pay-Calculator/static/js/runtime~main.a85f4b7c.js.map",
+  "static/js/2.c8aa4025.chunk.js": "/Pay-Calculator/static/js/2.c8aa4025.chunk.js",
+  "static/js/2.c8aa4025.chunk.js.map": "/Pay-Calculator/static/js/2.c8aa4025.chunk.js.map",
+  "index.html": "/Pay-Calculator/index.html",
+  "precache-manifest.5b1c3f2b9d446d30fd5c478b7f522167.js": "/Pay-Calculator/precache-manifest.5b1c3f2b9d446d30fd5c478b7f522167.js",
+  "service-worker.js": "/Pay-Calculator/service-worker.js"
 }

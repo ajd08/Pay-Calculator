@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/pay-calculator/precache-manifest.f6ca1bc8afc989085de38f5b525dccf9.js"
+  "/Pay-Calculator/precache-manifest.5b1c3f2b9d446d30fd5c478b7f522167.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/pay-calculator/index.html", {
+workbox.routing.registerNavigationRoute("/Pay-Calculator/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
